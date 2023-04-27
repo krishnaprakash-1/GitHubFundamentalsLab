@@ -1,0 +1,15 @@
+name: 'Hello World Docker Action'
+description: 'Greet Hello World and return current time'
+inputs:
+  who-to-greet:
+    description: 'Whom to greet'
+    required: true
+    default: 'World'
+outputs:
+  time:
+    description: 'Current time'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
